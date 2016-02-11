@@ -1,0 +1,14 @@
+nodejs:
+    image: node
+    volumes:
+        - ./src:/src
+    ports:
+        - 3000:3000
+    environment:
+        TERM: xterm-256color
+        PATH: $PATH:/src/node_modules/.bin/
+    command: sleep infinity
+couchdb:
+    image: klaemo/couchdb
+    ports:
+        - 5984:5984
